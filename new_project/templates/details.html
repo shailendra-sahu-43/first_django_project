@@ -1,0 +1,22 @@
+{% extends "base.html"%}
+{% load static %}
+{% block content %}
+{% block extra_css %} <link href="{% static 'about_style/style.css' %}"rel ="stylesheet" type="text/css"> {% endblock %}
+
+<div class="container">
+    <h1 class="text-center my-5">THIS IS THE PRODUCT DETAILS PAGE</h1>
+
+    <!-- Flex container for cards -->
+    <div class="d-flex flex-wrap gap-4 justify-content-center">
+        <div class="card" style="width: 26rem;">
+            <img src="{{myproduct.img.url}}" class="card-img-top" alt="..." class="card-img-custom " height = "200px">
+            <div class="card-body">
+                <h5 class="card-title">Card title: {{myproduct.title}}</h5>
+                <p class="card-text">{{myproduct.description}}</p>
+                <a href= "/" class="btn btn-primary right">Go Home Page</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+

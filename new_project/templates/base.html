@@ -35,17 +35,14 @@
         
 
           {% if user.is_authenticated %}
-          <li class="nav-item ms-35">
-            <a class="nav-link" href="#">{{request.user.username}} |</a>
-           </li>
              <form method="POST" action="{% url 'logout' %}" style="display:inline;">
                {% csrf_token %}
              <li class="nav-item ms-35">
-             <button type="submit" class="btn btn-primary"> Logout</button>
+             <button type="submit" class="btn btn-primary"> {{request.user.username}} | Logout</button>
              </li>
              </form>
             {% else %}
-             <!-- <a href="{% url 'login' %}" class="btn btn-link">Login</a> -->
+            <li><a href="{% url 'login' %}" class="btn btn-link">Login</a></li>
             {% endif %}
 
       </ul>
